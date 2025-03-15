@@ -4,7 +4,10 @@ go 1.23.0
 
 toolchain go1.23.7
 
-require github.com/matrix-org/gomatrixserverlib v0.0.0-20250127190859-51ff16e35a61
+require (
+	github.com/golang-jwt/jwt v3.2.2+incompatible
+	github.com/matrix-org/gomatrixserverlib v0.0.0-20250127190859-51ff16e35a61
+)
 
 require (
 	github.com/google/go-cmp v0.6.0 // indirect

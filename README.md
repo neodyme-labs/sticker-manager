@@ -11,6 +11,8 @@ integrations_ui_url=https://example.com/
 integrations_rest_url=https://example.com/api
 ```
 
+You can also enable a filter to only serve your stickerpicker to a specific homeserver
+
 # Development
 
 Add this to your account data inside the `m.widget` state using the developer tools
