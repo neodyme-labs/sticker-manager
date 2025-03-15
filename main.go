@@ -86,16 +86,19 @@ func ui(w http.ResponseWriter, r *http.Request) {
 	case "type_m.stickerpicker":
 		fmt.Fprintf(w, `
 		<script>
-			window.parent.postMessage({
-				"action": "set_widget",
-				"widget_id": "stickerpicker",
-				"url": "%s",
-				"type": "m.stickerpicker",
-				"userWidget": true
-			}, "*")
-			window.parent.postMessage({
-				"action": "close_scalar"
-			}, "*")
+			setInterval(() => {
+				window.parent.postMessage({
+					"action": "set_widget",
+					"widget_id": "stickerpicker",
+					"url": "%s",
+					"type": "m.stickerpicker",
+					"userWidget": true
+				}, "*");
+
+				window.parent.postMessage({
+					"action": "close_scalar"
+				}, "*");
+			}, 1000);
 		</script>
 		`, stickerUrl)
 	default:
